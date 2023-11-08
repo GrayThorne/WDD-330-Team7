@@ -115,7 +115,9 @@ export async function makeCheckout(payload) {
     body: JSON.stringify(payload),
   };
 
-  const response = await fetch("http://server-nodejs.cit.byui.edu:3000/checkout", options);
+  const baseURL = import.meta.env.VITE_SERVER_URL;
+
+  const response = await fetch(baseURL + "checkout", options);
   const data = await convertToJson(response);
   return data.Result;
 }
