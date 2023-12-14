@@ -94,7 +94,7 @@ header {
   color: var(--tertiary-color);
 }
 
-button {
+.buttongreen {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);
   color: white;
@@ -226,10 +226,10 @@ button {
 /* Start cart list card styles */
 .cart-card {
   display: grid;
-  grid-template-columns: 25% auto 15%;
+  grid-template-columns: auto 1fr auto; /* Updated grid-template-columns */
   font-size: var(--small-font);
-  /* max-height: 120px; */
   align-items: center;
+  gap: 10px; /* Add some gap between grid items */
 }
 
 .cart-card__image {
@@ -261,6 +261,19 @@ button {
   grid-column: 3;
 }
 
+.delete-item-btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  /* Position the button at the top-right */
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
 .cart-footerhide {
   display: none;
 }
@@ -270,8 +283,24 @@ button {
 }
 
 #success {
-  margin-left: 20% ;
+  margin-left: 20%;
   margin-right: 20%;
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .mission {
+    font-size: 1.2em;
+  }
+
+  .cart-card {
+    font-size: inherit;
+    grid-template-columns: 1fr;
+  }
 }
 /*Styles for the forms in the checkout page*/
 .shipping{
@@ -291,21 +320,6 @@ button {
   justify-content: center;
   margin-left: 33%;
   margin-right: 33%;
-}
-@media screen and (min-width: 500px) {
-  body {
-    max-width: 1080px;
-    margin: auto;
-  }
-
-  .mission {
-    font-size: 1.2em;
-  }
-
-  .cart-card {
-    font-size: inherit;
-    grid-template-columns: 150px auto 15%;
-  }
 }
 
 footer {
